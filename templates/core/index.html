@@ -27,7 +27,7 @@
             <tr>
                 <th scope="row">{{p.id}}</th>
                 <td>{{p.user}}</td>
-                <td><a href="{% url 'detail' p.id %}">{{p.text}}</a></td>
+                <td><a href="{% url 'detail' p.id %}" class="text-dark">{{p.text}}</a></td>
             </tr>
             {% endfor %}
 
