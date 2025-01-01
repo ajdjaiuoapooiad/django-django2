@@ -42,6 +42,6 @@
       </table>
       <a href="">いいねする</a>
       <a href="{% url 'update' p.id %}">編集する</a>
-      <a href="">削除する</a>
+      <a href="{% url 'delete' p.id %}">削除する</a>
       
 {% endblock content %}
