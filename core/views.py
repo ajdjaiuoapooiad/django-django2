@@ -2,7 +2,7 @@
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from django.contrib.auth.views import LoginView as BaseLoginView
+from django.contrib.auth.views import LoginView,LogoutView
 from core.forms import LoginForm, PostForm, RegisterForm
 from core.models import Post
 from django.contrib.auth import login
@@ -70,6 +70,9 @@ class register(CreateView):
     success_url=reverse_lazy('index')
     
 
-class login(BaseLoginView):
+class login(LoginView):
     form_class = LoginForm
     template_name='core/login.html'
+    
+class logout(LogoutView):
+    success_url=reverse_lazy('index')
