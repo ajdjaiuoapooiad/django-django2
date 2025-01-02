@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+
+
+{% block header %}
+<title>Register</title>
+{% endblock header %}
+  
+
+{% block content %}
+  
+
+
+    <h1>Register</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+    
+        <button type="submit">新規登録する</button>
+    </form>
+      
+{% endblock content %}
