@@ -14,31 +14,28 @@
   
     <h1>Index</h1>
 
-    <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th>id</th>
-            <th>user</th>
-            <th>text</th>
-          </tr>
-        </thead>
-        <tbody>
-            {% for p in posts %}
-            <tr>
-                <th scope="row">{{p.id}}</th>
-                <td>{{p.user}}</td>
-                <td><a href="{% url 'detail' p.id %}" class="text-dark">{{p.text}}</a></td>
-            </tr>
-            {% endfor %}
+    <div class="jumbotron">
+      <h1 class="display-3">作成しよう！！</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for
+                      calling extra attention to featured content or information.</p>
+      <hr class="my-2">
+      <p>It uses utility classes for typography and
+         spacing to space content out within the larger container.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'create' %}" role="button">Createする</a>
+      </p>
+    </div>
 
-          <!-- <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-          </tr> -->
+    {% for p in posts %}
+          
+      <div class="alert alert-secondary" role="alert">
+        <strong>id: {{p.id}}</strong>/
+        <strong>user: {{p.user}}</strong> /
+        text: {{p.text}}
+      </div>
+                
+    {% endfor %}
 
 
-        </tbody>
-      </table>
       
 {% endblock content %}
