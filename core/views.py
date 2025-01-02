@@ -1,11 +1,8 @@
 
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
-from django.contrib.auth.views import LoginView,LogoutView
-from core.forms import LoginForm, PostForm, RegisterForm
+from core.forms import PostForm
 from core.models import Post
-from django.contrib.auth import login
 
 def index(request):
     posts = Post.objects.all()
@@ -64,15 +61,3 @@ def delete(request,pk):
 #     post.like += request.user
 #     return redirect('index')[]
 
-class register(CreateView):
-    form_class = RegisterForm
-    template_name='core/register.html'
-    success_url=reverse_lazy('index')
-    
-
-class login(LoginView):
-    form_class = LoginForm
-    template_name='core/login.html'
-    
-class logout(LogoutView):
-    success_url=reverse_lazy('index')
